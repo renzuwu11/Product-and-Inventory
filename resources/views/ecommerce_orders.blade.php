@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<head>  <!-- Meta, title, CSS, favicons, etc. -->
+<head>
+  <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
-  <title>COMET.AL</title>
+  <title>AdminDesigns - A Responsive HTML5 Admin UI Framework</title>
   <meta name="keywords" content="HTML5 Bootstrap 3 Admin Template UI Theme" />
   <meta name="description" content="AdminDesigns - A Responsive HTML5 Admin UI Framework">
   <meta name="author" content="AdminDesigns">
@@ -12,11 +13,11 @@
   <!-- Font CSS (Via CDN) -->
   <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
 
+  <!-- Admin Forms CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
+
   <!-- Theme CSS -->
   <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
-
-  <!-- Admin Forms CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/img/favicon.ico">
@@ -43,13 +44,13 @@
       <div class="panel-body pn">
         <ul class="nav nav-list nav-list-sm pl15 pt10" role="tablist">
           <li class="active">
-            <a href="{{url('/')}}#toolbox-header" role="tab" data-toggle="tab">Navbar</a>
+            <a href="ecommerce_orders#toolbox-header" role="tab" data-toggle="tab">Navbar</a>
           </li>
           <li>
-            <a href="{{url('/')}}#toolbox-sidebar" role="tab" data-toggle="tab">Sidebar</a>
+            <a href="ecommerce_orders#toolbox-sidebar" role="tab" data-toggle="tab">Sidebar</a>
           </li>
           <li>
-            <a href="{{url('/')}}#toolbox-settings" role="tab" data-toggle="tab">Misc</a>
+            <a href="{{url('ecommerce_orders')}}#toolbox-settings" role="tab" data-toggle="tab">Misc</a>
           </li>
         </ul>
         <div class="tab-content p20 ptn pb15">
@@ -161,7 +162,7 @@
           </div>
         </div>
         <div class="form-group mn br-t p15">
-          <a href="{{url('/')}}#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
+          <a href="{{url('ecommerce_orders')}}#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
         </div>
       </div>
     </div>
@@ -174,96 +175,85 @@
     <!-- Start: Header -->
     <header class="navbar navbar-fixed-top">
       <div class="navbar-branding">
-        <a class="navbar-brand" href="{{url('/')}}">          
-          <img class="upperlogo" src="assets/img/logos/comet_al one.png" alt="COMET.AL">
-          <b class="titlecometal">COMET</b>.al
-      </a>
+        <a class="navbar-brand" href="{{url('/')}}">
+          <b>Admin</b>Designs
+        </a>
         <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
       </div>
       <ul class="nav navbar-nav navbar-left">
-<!--
         <li>
-          <a class="sidebar-menu-toggle" href="{{url('/')}}#">
+          <a class="sidebar-menu-toggle" href="{{url('ecommerce_orders')}}#">
             <span class="ad ad-ruby fs18"></span>
           </a>
         </li>
--->
-<!--
         <li>
-          <a class="topbar-menu-toggle" href="{{url('/')}}#">
+          <a class="topbar-menu-toggle" href="{{url('ecommerce_orders')}}#">
             <span class="ad ad-wand fs16"></span>
           </a>
         </li>
--->
-        <!-- Full Screen -->
         <li class="hidden-xs">
-          <a class="request-fullscreen toggle-active" href="{{url('/')}}#">
+          <a class="request-fullscreen toggle-active" href="{{url('ecommerce_orders')}}#">
             <span class="ad ad-screen-full fs18"></span>
           </a>
         </li>
-  
       </ul>
       <form class="navbar-form navbar-left navbar-search" role="search">
         <div class="form-group">
-<!--
           <input type="text" class="form-control" placeholder="Search..." value="Search...">
--->
         </div>
       </form>
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/')}}#">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="{{url('ecommerce_orders')}}#">
             <span class="ad ad-radio-tower fs18"></span>
           </a>
           <ul class="dropdown-menu media-list w350 animated animated-shorter fadeIn" role="menu">
             <li class="dropdown-header">
               <span class="dropdown-title"> Notifications</span>
-              <span class="label label-warning">4</span>
+              <span class="label label-warning">12</span>
             </li>
             <li class="media">
-              <a class="media-left" href="{{url('/')}}#"> <img src="assets/img/avatars/Fababeir.png" class="mw40" alt="avatar"> </a>
+              <a class="media-left" href="{{url('ecommerce_orders')}}#"> <img src="assets/img/avatars/5.jpg" class="mw40" alt="avatar"> </a>
               <div class="media-body">
-                <h5 class="media-heading"> <b>From:</b> Fababeir.Ruwu
-                  <small class="text-muted">- 12/01/23</small>
-                </h5> kumain k n b
-                <!-- <a class="text-system" href="{{url('/')}}#"> Max </a> -->
+                <h5 class="media-heading">Article
+                  <small class="text-muted">- 08/16/22</small>
+                </h5> Last Updated 36 days ago by
+                <a class="text-system" href="{{url('ecommerce_orders')}}#"> Max </a>
               </div>
             </li>
             <li class="media">
-              <a class="media-left" href="{{url('/')}}"> <img src="assets/img/avatars/Cabral.png" class="mw40" alt="avatar"> </a>
+              <a class="media-left" href="{{url('ecommerce_orders')}}#"> <img src="assets/img/avatars/2.jpg" class="mw40" alt="avatar"> </a>
               <div class="media-body">
-                <h5 class="media-heading mv5"> <b>From:</b> Cabral.Loyd
-                  <small> - 12/01/23</small>
-                </h5> otw na po
-                <!-- <a class="text-system" href="{{url('/')}}#"> Max </a> -->
-                </div>
-            </li>
-            <li class="media">
-              <a class="media-left" href="{{url('/')}}#"> <img src="assets/img/avatars/Torres.png" class="mw40" alt="avatar"> </a>
-              <div class="media-body">
-                <h5 class="media-heading"> <b>From:</b> Torres.Juli
-                  <small class="text-muted">- 12/01/23</small>
-                </h5> pabili po
-                <!-- <a class="text-system" href="{{url('/')}}#"> Max </a> -->
+                <h5 class="media-heading mv5">Article
+                  <small> - 08/16/22</small>
+                </h5>
+                Last Updated 36 days ago by
+                <a class="text-system" href="{{url('ecommerce_orders')}}#"> Max </a>
               </div>
             </li>
-<!--
             <li class="media">
-              <a class="media-left" href="{{url('/')}}#"> <img src="assets/img/avatars/4.jpg" class="mw40" alt="avatar"> </a>
+              <a class="media-left" href="{{url('ecommerce_orders')}}#"> <img src="assets/img/avatars/3.jpg" class="mw40" alt="avatar"> </a>
+              <div class="media-body">
+                <h5 class="media-heading">Article
+                  <small class="text-muted">- 08/16/22</small>
+                </h5> Last Updated 36 days ago by
+                <a class="text-system" href="{{url('ecommerce_orders')}}#"> Max </a>
+              </div>
+            </li>
+            <li class="media">
+              <a class="media-left" href="{{url('ecommerce_orders')}}#"> <img src="assets/img/avatars/4.jpg" class="mw40" alt="avatar"> </a>
               <div class="media-body">
                 <h5 class="media-heading mv5">Article
                   <small class="text-muted">- 08/16/22</small>
                 </h5> Last Updated 36 days ago by
-                <a class="text-system" href="{{url('/')}}#"> Max </a>
+                <a class="text-system" href="{{url('ecommerce_orders')}}#"> Max </a>
               </div>
             </li>
--->
           </ul>
         </li>
-<!--
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="{{url('/')}}#">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="{{url('ecommerce_orders')}}#">
             <span class="flag-xs flag-us"></span> US
           </a>
           <ul class="dropdown-menu pv5 animated animated-short flipInX" role="menu">
@@ -281,10 +271,11 @@
             </li>
           </ul>
         </li>
--->
+        <li class="menu-divider hidden-xs">
+          <i class="fa fa-circle"></i>
+        </li>
         <li class="dropdown">
-          <a href="{{url('ecommerce_orders')}}#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
-            <img src="assets/img/avatars/Kho.png" alt="avatar" class="mw30 br64 mr15"> <b class="surnamebold">Kho</b>.Kim
+          <a href="{{url('ecommerce_orders')}}#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> <img src="assets/img/avatars/1.jpg" alt="avatar" class="mw30 br64 mr15"> John.Smith
             <span class="caret caret-tp hidden-xs"></span>
           </a>
           <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">

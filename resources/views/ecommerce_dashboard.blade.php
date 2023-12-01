@@ -175,6 +175,7 @@
     <!-- Start: Header -->
     <header class="navbar navbar-fixed-top">
       <div class="navbar-branding">
+<!-- CHANGED THIS -->
         <a class="navbar-brand" href="{{url('/')}}">          
           <img class="upperlogo" src="assets/img/logos/comet_al one.png" alt="COMET.AL">
           <b class="titlecometal">COMET</b>.al
@@ -182,7 +183,7 @@
         <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
       </div>
       <ul class="nav navbar-nav navbar-left">
-<!--
+<!-- REMOVED THIS
         <li>
           <a class="sidebar-menu-toggle" href="{{url('/')}}#">
             <span class="ad ad-ruby fs18"></span>
@@ -223,6 +224,7 @@
               <span class="label label-warning">4</span>
             </li>
             <li class="media">
+<!-- CHANGED THIS -->
               <a class="media-left" href="{{url('/')}}#"> <img src="assets/img/avatars/Fababeir.png" class="mw40" alt="avatar"> </a>
               <div class="media-body">
                 <h5 class="media-heading"> <b>From:</b> Fababeir.Ruwu
@@ -231,6 +233,7 @@
                 <!-- <a class="text-system" href="{{url('/')}}#"> Max </a> -->
               </div>
             </li>
+<!-- CHANGED THIS -->
             <li class="media">
               <a class="media-left" href="{{url('/')}}"> <img src="assets/img/avatars/Cabral.png" class="mw40" alt="avatar"> </a>
               <div class="media-body">
@@ -240,6 +243,7 @@
                 <!-- <a class="text-system" href="{{url('/')}}#"> Max </a> -->
                 </div>
             </li>
+<!-- CHANGED THIS -->
             <li class="media">
               <a class="media-left" href="{{url('/')}}#"> <img src="assets/img/avatars/Torres.png" class="mw40" alt="avatar"> </a>
               <div class="media-body">
@@ -287,6 +291,7 @@
           <i class="fa fa-circle"></i>
         </li>
         <li class="dropdown">
+<!-- CHANGED THIS -->
           <a href="{{url('/')}}#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
             <img src="assets/img/avatars/Kho.png" alt="avatar" class="mw30 br64 mr15"> <b class="surnamebold">Kho</b>.Kim
             <span class="caret caret-tp hidden-xs"></span>
@@ -779,6 +784,7 @@
             </a>
           </li>
 -->
+<!-- CHANGED THIS -->
 <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  <br> <br>
 <!--
           <!-- sidebar resources
