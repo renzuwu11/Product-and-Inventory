@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap">
     <style>
         body {
             font-family: 'Glacial Indifference', sans-serif;
-            background-image: url('assets/img/logos/comet.al-login-admin.png'); /* Adjust the path as needed */
+            background-image: url('assets/img/logos/comet.al-login-admin.png');
             background-size: cover;
             background-position: center;
             display: flex;
