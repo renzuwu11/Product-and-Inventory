@@ -44,13 +44,13 @@
       <div class="panel-body pn">
         <ul class="nav nav-list nav-list-sm pl15 pt10" role="tablist">
           <li class="active">
-            <a href="{{url('/')}}#toolbox-header" role="tab" data-toggle="tab">Navbar</a>
+            <a href="{{url('/ecommerce_dashboard')}}#toolbox-header" role="tab" data-toggle="tab">Navbar</a>
           </li>
           <li>
-            <a href="{{url('/')}}#toolbox-sidebar" role="tab" data-toggle="tab">Sidebar</a>
+            <a href="{{url('/ecommerce_dashboard')}}#toolbox-sidebar" role="tab" data-toggle="tab">Sidebar</a>
           </li>
           <li>
-            <a href="{{url('/')}}#toolbox-settings" role="tab" data-toggle="tab">Misc</a>
+            <a href="{{url('/ecommerce_dashboard')}}#toolbox-settings" role="tab" data-toggle="tab">Misc</a>
           </li>
         </ul>
         <div class="tab-content p20 ptn pb15">
@@ -162,156 +162,105 @@
           </div>
         </div>
         <div class="form-group mn br-t p15">
-          <a href="{{url('/')}}#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
+          <a href="{{url('/ecommerce_dashboard')}}#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
         </div>
       </div>
     </div>
   </div>
   <!-- End: Theme Preview Pane -->
 
-  <!-- Start: Main -->
-  <div id="main">
+<!-- Start: Main -->
+<div id="main">
 
-    <!-- Start: Header -->
-      @include('header')
-    <!-- End: Header -->
+<!-- Start: Header -->
+  @include('header')
+<!-- End: Header -->
 
-    <!-- Start: Sidebar -->
-    <aside id="sidebar_left" class="nano nano-primary affix">
-
-      <!-- Start: Sidebar Left Content -->
-      <div class="sidebar-left-content nano-content">
-
-        <!-- Start: Sidebar Header -->
-        <header class="sidebar-header">
-
-          <!-- Sidebar Widget - Menu (Slidedown) -->
-          <div class="sidebar-widget menu-widget">
-            <div class="row text-center mbn">
-              <div class="col-xs-4">
-                <a href="{{url('/')}}" class="text-primary" data-toggle="tooltip" data-placement="top" title="Dashboard">
-                  <span class="glyphicon glyphicon-home"></span>
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a href="pages_messages.blade.php" class="text-info" data-toggle="tooltip" data-placement="top" title="Messages">
-                  <span class="glyphicon glyphicon-inbox"></span>
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a href="pages_profile.blade.php" class="text-alert" data-toggle="tooltip" data-placement="top" title="Tasks">
-                  <span class="glyphicon glyphicon-bell"></span>
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a href="pages_timeline.blade.php" class="text-system" data-toggle="tooltip" data-placement="top" title="Activity">
-                  <span class="fa fa-desktop"></span>
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a href="pages_profile.blade.php" class="text-danger" data-toggle="tooltip" data-placement="top" title="Settings">
-                  <span class="fa fa-gears"></span>
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a href="pages_gallery.blade.php" class="text-warning" data-toggle="tooltip" data-placement="top" title="Cron Jobs">
-                  <span class="fa fa-flask"></span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sidebar Widget - Author (hidden)  -->
-          <div class="sidebar-widget author-widget hidden">
-            <div class="media">
-              <a class="media-left" href="{{url('/')}}#">
-                <img src="assets/img/avatars/3.jpg" class="img-responsive">
-              </a>
-              <div class="media-body">
-                <div class="media-links">
-                   <a href="{{url('/')}}#" class="sidebar-menu-toggle">User Menu -</a> <a href="pages_login(alt).blade.php">Logout</a>
-                </div>
-                <div class="media-author">Michael Richards</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sidebar Widget - Search (hidden) -->
-          <div class="sidebar-widget search-widget hidden">
-            <div class="input-group">
-              <span class="input-group-addon">
-                <i class="fa fa-search"></i>
-              </span>
-              <input type="text" id="sidebar-search" class="form-control" placeholder="Search...">
-            </div>
-          </div>
-
-        </header>
-        <!-- End: Sidebar Header -->
-
-        <!-- Start: Sidebar Menu -->
-          @include('sidebarMenu')
-        <!-- End: Sidebar Menu -->
-
-	      <!-- Start: Sidebar Collapse Button -->
-	      <div class="sidebar-toggle-mini">
-	        <a href="{{url('/')}}#">
-	          <span class="fa fa-sign-out"></span>
-	        </a>
-	      </div>
-	      <!-- End: Sidebar Collapse Button -->
-      </div>
-      <!-- End: Sidebar Left Content -->
-    </aside>
-    <!-- Start: Content-Wrapper -->
-    <section id="content_wrapper">
-
-      <!-- Start: Topbar-Dropdown -->
-      <div id="topbar-dropmenu">
-        <div class="topbar-menu row">
-          <div class="col-xs-4 col-sm-2">
-            <a href="{{url('/')}}#" class="metro-tile">
-              <span class="metro-icon glyphicon glyphicon-inbox"></span>
-              <p class="metro-title">Messages</p>
+<!-- Start: Sidebar -->
+<aside id="sidebar_left" class="nano nano-primary affix">
+<!-- Start: Sidebar Left Content -->
+  <div class="sidebar-left-content nano-content">
+<!-- Start: Sidebar Menu -->
+    <ul class="nav sidebar-menu">
+      <li class="sidebar-label pt20">ADMIN</li>
+      <li>
+        <a class="accordion-toggle menu-open" href="{{url('/ecommerce_dashboard')}}#">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          <span class="sidebar-title">Ecommerce</span>
+          <span class="caret"></span>
+        </a>
+        <ul class="nav sub-nav">
+          <li class="active">
+            <a href="{{url('ecommerce_dashboard')}}">
+              <span class="glyphicon glyphicon-shopping-cart"></span> Dashboard
             </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="{{url('/')}}#" class="metro-tile">
-              <span class="metro-icon glyphicon glyphicon-user"></span>
-              <p class="metro-title">Users</p>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="{{url('/')}}#" class="metro-tile">
-              <span class="metro-icon glyphicon glyphicon-headphones"></span>
-              <p class="metro-title">Support</p>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="{{url('/')}}#" class="metro-tile">
-              <span class="metro-icon fa fa-gears"></span>
-              <p class="metro-title">Settings</p>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="{{url('/')}}#" class="metro-tile">
-              <span class="metro-icon glyphicon glyphicon-facetime-video"></span>
-              <p class="metro-title">Videos</p>
-            </a>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <a href="{{url('/')}}#" class="metro-tile">
-              <span class="metro-icon glyphicon glyphicon-picture"></span>
-              <p class="metro-title">Pictures</p>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- End: Topbar-Dropdown -->
+          </li>
+          <li>
+            <a href="{{url('ecommerce_products')}}">
+              <span class="glyphicon glyphicon-tags"></span> Products </a>
+          </li>
+          <li>
+            <a href="{{url('ecommerce_orders')}}">
+              <span class="fa fa-money"></span> Orders </a>
+          </li>
+          <li>
+            <a href="{{url('ecommerce_customers')}}">
+              <span class="fa fa-users"></span> Customers </a>
+          </li>
+          <li>
+            <a href="{{url('ecommerce_settings')}}">
+              <span class="fa fa-gears"></span> Store Settings </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  <br> <br>
+<!-- End: Sidebar Menu -->
 
-      <!-- Start: Topbar -->
-        @include('topbar')
-      <!-- End: Topbar -->
+<!-- Start: Sidebar Collapse Button -->
+	  <div class="sidebar-toggle-mini">
+	    <a href="{{url('/ecommerce_dashboard')}}#">
+	      <span class="fa fa-sign-out"></span>
+	    </a>
+	  </div>
+<!-- End: Sidebar Collapse Button -->
+  </div>
+<!-- End: Sidebar Left Content -->
+</aside>
+
+<!-- Start: Content-Wrapper -->
+<section id="content_wrapper">
+  <!-- Start: Topbar -->
+  <header id="topbar" class="ph10">
+    <div class="topbar-left">
+      <ul class="nav nav-list nav-list-topbar pull-left">
+        <li class="active">
+          <a href="{{url('/ecommerce_dashboard')}}">Dashboard</a>
+        </li>
+        <li>
+          <a href="{{url('ecommerce_products')}}">Products</a>
+        </li>
+        <li>
+          <a href="{{url('ecommerce_orders')}}">Orders</a>
+        </li>
+        <li>
+          <a href="{{url('ecommerce_customers')}}">Customers</a>
+        </li>
+        <li>
+          <a href="{{url('ecommerce_settings')}}">Settings</a>
+        </li>
+      </ul>
+    </div>
+    <div class="topbar-right hidden-xs hidden-sm">
+      <a href="{{url('ecommerce_orders')}}" class="btn btn-default btn-sm light fw600 ml10">
+        <span class="fa fa-plus pr5"></span> New Order</a>
+      <a href="{{url('ecommerce_products')}}" class="btn btn-default btn-sm light fw600 ml10">
+        <span class="fa fa-plus pr5"></span> Add Product</a>
+      <a href="{{url('ecommerce_customers')}}" class="btn btn-default btn-sm light fw600 ml10">
+        <span class="fa fa-user pr5"></span> Add Customer</a>
+    </div>
+  </header>
+<!-- End: Topbar -->
 
       <!-- Begin: Content -->
       <section id="content" class="table-layout animated fadeIn">
@@ -395,13 +344,13 @@
               <span class="panel-title hidden-xs"> Recent Activity</span>
               <ul class="nav panel-tabs panel-tabs-merge">
                 <li class="active">
-                  <a href="{{url('/')}}#tab1_1" data-toggle="tab"> Top Sellers</a>
+                  <a href="{{url('/ecommerce_dashboard')}}#tab1_1" data-toggle="tab"> Top Sellers</a>
                 </li>
                 <li>
-                  <a href="{{url('/')}}#tab1_2" data-toggle="tab"> Most Viewed</a>
+                  <a href="{{url('/ecommerce_dashboard')}}#tab1_2" data-toggle="tab"> Most Viewed</a>
                 </li>
                 <li>
-                  <a href="{{url('/')}}#tab1_3" class="hidden-xs" data-toggle="tab"> New Customers</a>
+                  <a href="{{url('/ecommerce_dashboard')}}#tab1_3" class="hidden-xs" data-toggle="tab"> New Customers</a>
                 </li>
               </ul>
             </div>
@@ -435,23 +384,23 @@
                           </button>
                           <ul class="dropdown-menu" role="menu">
                             <li>
-                              <a href="{{url('/')}}#">Edit</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Edit</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Delete</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Delete</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Archive</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Archive</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                              <a href="{{url('/')}}#">Complete</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Complete</a>
                             </li>
                             <li class="active">
-                              <a href="{{url('/')}}#">Pending</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Pending</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Canceled</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Canceled</a>
                             </li>
                           </ul>
                         </div>
@@ -472,23 +421,23 @@
                           </button>
                           <ul class="dropdown-menu" role="menu">
                             <li>
-                              <a href="{{url('/')}}#">Edit</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Edit</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Delete</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Delete</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Archive</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Archive</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                              <a href="{{url('/')}}#">Complete</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Complete</a>
                             </li>
                             <li class="active">
-                              <a href="{{url('/')}}#">Pending</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Pending</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Canceled</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Canceled</a>
                             </li>
                           </ul>
                         </div>
@@ -509,23 +458,23 @@
                           </button>
                           <ul class="dropdown-menu" role="menu">
                             <li>
-                              <a href="{{url('/')}}#">Edit</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Edit</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Delete</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Delete</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Archive</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Archive</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                              <a href="{{url('/')}}#">Complete</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Complete</a>
                             </li>
                             <li class="active">
-                              <a href="{{url('/')}}#">Pending</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Pending</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Canceled</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Canceled</a>
                             </li>
                           </ul>
                         </div>
@@ -546,23 +495,23 @@
                           </button>
                           <ul class="dropdown-menu" role="menu">
                             <li>
-                              <a href="{{url('/')}}#">Edit</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Edit</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Delete</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Delete</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Archive</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Archive</a>
                             </li>
                             <li class="divider"></li>
                             <li>
-                              <a href="{{url('/')}}#">Complete</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Complete</a>
                             </li>
                             <li class="active">
-                              <a href="{{url('/')}}#">Pending</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Pending</a>
                             </li>
                             <li>
-                              <a href="{{url('/')}}#">Canceled</a>
+                              <a href="{{url('/ecommerce_dashboard')}}#">Canceled</a>
                             </li>
                           </ul>
                         </div>
@@ -681,7 +630,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Michael</b> Added a new item to his store:
-                <a href="{{url('/')}}#">Ipod</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Ipod</a>
               </div>
               <div class="timeline-date">1:25am</div>
             </li>
@@ -691,7 +640,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Sara</b> Added a new item to his store:
-                <a href="{{url('/')}}#">Notebook</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Notebook</a>
               </div>
               <div class="timeline-date">3:05am</div>
             </li>
@@ -701,7 +650,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Admin</b> created a new invoice for:
-                <a href="{{url('/')}}#">Software</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Software</a>
               </div>
               <div class="timeline-date">4:15am</div>
             </li>
@@ -719,7 +668,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Admin</b> created a new invoice for:
-                <a href="{{url('/')}}#">Apple Inc.</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Apple Inc.</a>
               </div>
               <div class="timeline-date">7:45am</div>
             </li>
@@ -729,7 +678,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Michael</b> Added a new item to his store:
-                <a href="{{url('/')}}#">Ipod</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Ipod</a>
               </div>
               <div class="timeline-date">8:25am</div>
             </li>
@@ -739,7 +688,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Sara</b> Added a new item to his store:
-                <a href="{{url('/')}}#">Watch</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Watch</a>
               </div>
               <div class="timeline-date">9:35am</div>
             </li>
@@ -749,7 +698,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Admin</b> created a new invoice for:
-                <a href="{{url('/')}}#">Software</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Software</a>
               </div>
               <div class="timeline-date">4:15am</div>
             </li>
@@ -767,7 +716,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Admin</b> created a new invoice for:
-                <a href="{{url('/')}}#">Software</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Software</a>
               </div>
               <div class="timeline-date">4:15am</div>
             </li>
@@ -785,7 +734,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Admin</b> created a new invoice for:
-                <a href="{{url('/')}}#">Apple Inc.</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Apple Inc.</a>
               </div>
               <div class="timeline-date">7:45am</div>
             </li>
@@ -795,7 +744,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Michael</b> Added a new item to his store:
-                <a href="{{url('/')}}#">Ipod</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Ipod</a>
               </div>
               <div class="timeline-date">8:25am</div>
             </li>
@@ -805,7 +754,7 @@
               </div>
               <div class="timeline-desc">
                 <b>Sara</b> Added a new item to his store:
-                <a href="{{url('/')}}#">Watch</a>
+                <a href="{{url('/ecommerce_dashboard')}}#">Watch</a>
               </div>
               <div class="timeline-date">9:35am</div>
             </li>
