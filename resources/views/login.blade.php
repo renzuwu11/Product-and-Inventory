@@ -60,9 +60,16 @@
             justify-content: center;
             align-items: center;
         }
+        .logo img {
+            width: 350px;
+            height: auto;
+            margin-left: 150px;
+            margin-top: -17vh;
+            margin-bottom: -10vh;
+        }
         .tagline {
             margin: 0;
-            padding-left: 160px;
+            padding-left: 150px;
             font-size: 20px;
             text-align: center;
         }
@@ -70,7 +77,7 @@
             background-color: #9CB2CE; 
             padding: 20px;
             border-radius: 8px;
-            margin-left: 17%;
+            margin-left: 14%;
             height: 80vh;
             width: 35%;
             box-shadow: 0px 0px 15px 8px rgba(156, 178, 206, 0.3); /* Adjusted shadow values */
@@ -140,9 +147,9 @@
 <div class="ring2"></div>
 <div class="ring3"></div>
 <div class="left-side">
-    <div class="tagline">
-        <h1>LOGO</h1>
-        <p>Discover your own comet's trail</p>
+    <div class="logo">
+        <img src="assets/img/logos/comet.al_logo1.png" alt="Logo">
+        <p class="tagline">Discover your own comet's trail</p>
     </div>
 </div>
 <div class="login-form">
