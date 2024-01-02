@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>COMET.AL</title>
+    <link rel="shortcut icon" href="assets/img/logos/comet_al logo.png">
     <style>
         body, html {
             margin: 0;
