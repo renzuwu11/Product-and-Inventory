@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Glacial+Indifference&display=swap">
     <style>
         body {
             font-family: 'Glacial Indifference', sans-serif;
-            background-image: url('assets/img/logos/comet.al-login-admin.png');
-            background-size: cover;
-            background-position: center;
+            margin: 0;
+            position: relative;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+        }
+        .ring1, .ring2, .ring3 {
+            position: fixed;
+            background-size: auto;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        .ring1 {
+            margin-top: -42vh;
+            margin-left: -10vh;
+            width: 100%; 
+            height: 100%; 
+            background-image: url('assets/img/logos/ring1.png');
+            background-size: 35%;
+            animation: floatAnimation 5s ease-in-out infinite alternate;
+        }
+        .ring2 {
+            top: 20%;
+            left: 35%;
+            width: 100%; 
+            height: 100%;  
+            background-image: url('assets/img/logos/ring2.png');
+            background-size: 35%;
+            animation: floatAnimation 5s ease-in-out infinite alternate;
+        }
+        .ring3 {
+            bottom: -60%;
+            left: -10%;
+            width: 100%; 
+            height: 100%; 
+            background-image: url('assets/img/logos/ring3.png');
+            background-size: 35%;
+            animation: floatAnimation 5s ease-in-out infinite alternate;
+        }
+        @keyframes floatAnimation {
+            0% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(20px);
+            }
         }
         .left-side {
             display: flex;
@@ -68,6 +108,13 @@
             font-size: 18px;
             margin-top: 3vh;
         }
+        .password-toggle {
+            position: relative;
+            top: -26px; 
+            right: -92%; 
+            cursor: pointer;
+            font-size: 16px;
+        }
         .login button {
             background-color: #FFFFFF;
             padding: 8px 16px;
@@ -88,6 +135,9 @@
     </style>
 </head>
 <body>
+<div class="ring1"></div>
+<div class="ring2"></div>
+<div class="ring3"></div>
 <div class="left-side">
     <div class="tagline">
         <h1>LOGO</h1>
@@ -102,7 +152,7 @@
             <p class="tl">Enter your email and password</p>
         </div>
         <div class="email">
-            <label for="email">Email</label>
+            <label for="email">Email</label> 
         </div>
         <div>
             <input type="text" id="email" name="email" placeholder="Enter your email">
@@ -112,12 +162,30 @@
         </div>
         <div>
             <input type="password" id="password" name="password" placeholder="Enter your password">
+            <span class="password-toggle" onclick="togglePassword()">
+                <i id="toggleIcon" class="material-icons">visibility</i>
+            </span>
         </div>
+        
         <div class="login">
             <button type="submit">Log in</button>
         </div>
     </form>
 </div>
 
+<script>
+    function togglePassword() {
+        var passwordField = document.getElementById("password");
+        var icon = document.getElementById("toggleIcon");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            icon.textContent = "visibility_off"; // Change icon to hide password
+        } else {
+            passwordField.type = "password";
+            icon.textContent = "visibility"; // Change icon to show password
+        }
+    }
+</script>
 </body>
 </html>
