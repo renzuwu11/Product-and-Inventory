@@ -15,7 +15,7 @@
         }
         .ring1, .ring2, .ring3 {
             position: fixed;
-            background-size: auto;
+            background-size: contain;
             background-repeat: no-repeat;
             z-index: -1;
         }
@@ -73,6 +73,7 @@
             margin-left: 17%;
             height: 80vh;
             width: 35%;
+            box-shadow: 0px 0px 15px 8px rgba(156, 178, 206, 0.3); /* Adjusted shadow values */
         }
         .welcome {
             font-size: 30px;
