@@ -3,21 +3,28 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('login');
+    $errorMessage = session('error'); // Retrieve error message from session
+    return view('login', ['errorMessage' => $errorMessage]);
 })->name('login'); 
 
 Route::post('/', function () {
     $credentials = request()->only('email', 'password');
 
     // Hardcoded check (for testing purposes only)
-    if ($credentials['email'] === 'test@example.com' && $credentials['password'] === 'password123') {
+    if ($credentials['email'] === 'test@example.com' && $credentials['password'] === 'pass_123') {
         // If the credentials match, simulate authentication using session
         Session::put('logged_in', true);
-        return redirect('/ecommerce_dashboard'); // Redirect to the dashboard
+
+        // Redirect to the loading page with the dashboard as the redirect path
+        return redirect('/loading');
     } else {
-        // Incorrect credentials - redirect back to login
-        return redirect('/login')->with('error', 'Invalid credentials');
+        // Incorrect credentials - redirect back to login with error message
+        return redirect('/')->with('error', 'Invalid credentials');
     }
+});
+
+Route::get('/loading', function () {
+    return view('loadingpage', ['redirectPath' => '/ecommerce_dashboard']);
 });
 
 Route::get('/ecommerce_dashboard', function () {
