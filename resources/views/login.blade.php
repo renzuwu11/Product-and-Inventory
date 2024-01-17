@@ -82,7 +82,7 @@
             margin-left: 14%;
             height: 80vh;
             width: 35%;
-            box-shadow: 0px 0px 15px 8px rgba(156, 178, 206, 0.3); /* Adjusted shadow values */
+            box-shadow: 0px 0px 15px 8px rgba(156, 178, 206, 0.3); 
         }
         .welcome {
             font-size: 30px;

@@ -1,34 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <!-- Meta, title, CSS, favicons, etc. -->
-  <meta charset="utf-8">
-  <title>AdminDesigns - A Responsive HTML5 Admin UI Framework</title>
-  <meta name="keywords" content="HTML5 Bootstrap 3 Admin Template UI Theme" />
-  <meta name="description" content="AdminDesigns - A Responsive HTML5 Admin UI Framework">
-  <meta name="author" content="AdminDesigns">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Font CSS (Via CDN) -->
-  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'>
-
-  <!-- Admin Forms CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
-
-  <!-- Theme CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/img/favicon.ico">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-<![endif]-->
-
-</head>
+<!-- Start: Meta, title, CSS, favicons, etc. -->
+  @include('theme')
+<!-- End: Meta, title, CSS, favicons, etc. -->
 
 <body class="ecommerce-page">
 
@@ -103,7 +78,7 @@
 <!-- CHANGED THIS -->
   <li class="dropdown">
     <a href="{{url('/ecommerce_dashboard')}}#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
-      <img src="assets/img/avatars/Kho.png" alt="avatar" class="mw30 br64 mr15"> <b class="surnamebold">Kho</b>.Kim
+      <img id="profile-picture-dropdown" src="" alt="avatar" class="mw30 br64 mr15"> <b class="surnamebold">Kho</b>.Kim
       <span class="caret caret-tp hidden-xs"></span>
     </a>
     <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
@@ -141,7 +116,7 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="{{url('/ecommerce_dashboard')}}#" class="animated animated-short fadeInUp">
+        <a href="{{url('/ecommerce_settings')}}#" class="animated animated-short fadeInUp">
           <span class="fa fa-gear"></span> Account Settings </a>
       </li>
       <li class="list-group-item">
@@ -185,10 +160,6 @@
             <a href="{{url('ecommerce_customers')}}">
               <span class="fa fa-users"></span> Customers </a>
           </li>
-          <li>
-            <a href="{{url('ecommerce_settings')}}">
-              <span class="fa fa-gears"></span> Store Settings </a>
-          </li>
         </ul>
       </li>
     </ul>
@@ -223,9 +194,6 @@
         </li>
         <li class="active">
           <a href="{{url('ecommerce_customers')}}">Customers</a>
-        </li>
-        <li>
-          <a href="{{url('ecommerce_settings')}}">Settings</a>
         </li>
       </ul>
     </div>
@@ -1462,6 +1430,9 @@
 
   });
   </script>
+  
+  @include('profile_change')
+
   <!-- END: PAGE SCRIPTS -->
 
 </body>

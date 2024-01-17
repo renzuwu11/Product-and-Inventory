@@ -62,7 +62,7 @@
 <!-- CHANGED THIS -->
   <li class="dropdown">
     <a href="{{url('/ecommerce_dashboard')}}#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
-      <img src="assets/img/avatars/Kho.png" alt="avatar" class="mw30 br64 mr15"> <b class="surnamebold">Kho</b>.Kim
+      <img id="profile-picture-dropdown" src="" alt="avatar" class="mw30 br64 mr15"> <b class="surnamebold">Kho</b>.Kim
       <span class="caret caret-tp hidden-xs"></span>
     </a>
     <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
@@ -100,7 +100,7 @@
         </a>
       </li>
       <li class="list-group-item">
-        <a href="{{url('/ecommerce_dashboard')}}#" class="animated animated-short fadeInUp">
+        <a href="{{url('/ecommerce_settings')}}#" class="animated animated-short fadeInUp">
           <span class="fa fa-gear"></span> Account Settings </a>
       </li>
       <li class="list-group-item">
