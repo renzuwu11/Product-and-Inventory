@@ -86,10 +86,19 @@
   </li>          
 <!-- CHANGED THIS -->
   <li class="dropdown">
-    <a href="{{url('/ecommerce_dashboard')}}#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
-      <img id="profile-picture-dropdown" src="" alt="avatar" class="mw30 br64 mr15"> <b class="surnamebold">Kho</b>.Kim
-      <span class="caret caret-tp hidden-xs"></span>
-    </a>
+    @auth
+        <a href="{{ url('/ecommerce_dashboard') }}" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
+            <img id="profile-picture-dropdown" src="{{ asset('employee_images/' . Auth::user()->EmpImage) }}" alt="avatar" class="mw30 br64 mr15">
+            <b class="surnamebold">{{ Auth::user()->EmpFirstName }}.{{ Auth::user()->EmpLastName }}</b>
+            <span class="caret caret-tp hidden-xs"></span>
+        </a>
+    @else
+        <a href="{{ url('/') }}" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
+            <img id="profile-picture-dropdown" src="{{ asset('path-to-default-image.jpg') }}" alt="default-avatar" class="mw30 br64 mr15">
+            <b class="surnamebold">Guest</b>
+            <span class="caret caret-tp hidden-xs"></span>
+        </a>
+    @endauth
     <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
       <li class="dropdown-header clearfix">
         <div class="pull-left ml10">
@@ -143,31 +152,33 @@
 <!-- Start: Sidebar Left Content -->
   <div class="sidebar-left-content nano-content">
 <!-- Start: Sidebar Menu -->
-    <ul class="nav sidebar-menu">
+<ul class="nav sidebar-menu">
       <li class="sidebar-label pt20">ADMIN</li>
       <li>
+        <a href="{{url('ecommerce_dashboard')}}">
+          <span class="glyphicon glyphicon-home"></span>
+          <span class="sidebar-title">Dashboard</span>
+        </a>
+      </li>
+      </li>
+      <li>
         <a class="accordion-toggle menu-open" href="{{url('/ecommerce_dashboard')}}#">
-          <span class="glyphicon glyphicon-shopping-cart"></span>
-          <span class="sidebar-title">Ecommerce</span>
+          <span class="glyphicon glyphicon-heart"></span>
+          <span class="sidebar-title">Product & Inventory</span>
           <span class="caret"></span>
         </a>
         <ul class="nav sub-nav">
           <li>
-            <a href="{{url('ecommerce_dashboard')}}">
-              <span class="glyphicon glyphicon-shopping-cart"></span> Dashboard
-            </a>
-          </li>
-          <li>
             <a href="{{url('ecommerce_products')}}">
-              <span class="glyphicon glyphicon-tags"></span> Products </a>
+              <span class="glyphicon glyphicon-star"></span> View Products </a>
           </li>
           <li>
-            <a href="{{url('ecommerce_orders')}}">
-              <span class="fa fa-money"></span> Orders </a>
+            <a href="{{url('ecommerce_addproducts')}}">
+              <span class="glyphicon glyphicon-plus"></span> Add Products </a>
           </li>
           <li>
-            <a href="{{url('ecommerce_customers')}}">
-              <span class="fa fa-users"></span> Customers </a>
+            <a href="{{url('ecommerce_returneditem')}}">
+              <span class="glyphicon glyphicon-remove"></span> Returned Products </a>
           </li>
         </ul>
       </li>
@@ -198,90 +209,95 @@
                     
       <div class="mw1000 center-block">
         
-        <!-- Store Owner Details -->
-        <div class="panel panel-warning panel-border top mt20 mb35">
-          <div class="panel-heading">
-            <span class="panel-title">Owner Details</span>
-          </div>
-          <div class="panel-body bg-light dark">
-            <div class="admin-form">
-              <div class="section row mb10">
-                <label for="account-picture" class="field-label col-md-3 text-center">Profile Picture:</label>
-                <div class="col-md-9">
-                  <div class="fileupload fileupload-new" data-provides="fileupload">
-                    <div class="fileupload-preview thumbnail mb20">
-                      <img id="profile-picture" src="path_to_default_image.jpg" alt="Profile Picture">
-                    </div>
-                    <div class="row">
-                      <div class="col-xs-7 pr5">
-                        <input type="file" name="account-picture" id="account-picture" accept="image/*" onchange="readURL(this);">
-                      </div>
+      <!-- Store Owner Details -->
+      <div class="panel panel-warning panel-border top mt20 mb35">
+        <div class="panel-heading">
+          <span class="panel-title">Owner Details</span>
+        </div>
+        <div class="panel-body bg-light dark">
+          <div class="admin-form">
+            <div class="section row mb10">
+              <label for="account-picture" class="field-label col-md-3 text-center">Profile Picture:</label>
+              <div class="col-md-9">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                  <div class="fileupload-preview thumbnail mb20">
+                    @if(Auth::check() && Auth::user()->EmpImage)
+                      <img id="profile-picture" src="{{ asset('employee_images/' . Auth::user()->EmpImage) }}" alt="Profile Picture">
+                    @else
+                      <!-- Default image or placeholder -->
+                      <span class="glyphicon glyphicon-user" style="font-size: 100px;"></span>
+                    @endif
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-7 pr5">
+                      <input type="file" name="account-picture" id="account-picture" accept="image/*" onchange="readURL(this);">
                     </div>
                   </div>
                 </div>
               </div>
-              <br>
-              <div class="section row mb10">
-                <label for="account-name" class="field-label col-md-3 text-center">Account Name:</label>
-                <div class="col-md-9">
-                  <label for="account-name" class="field prepend-icon">
-                    <input type="text" name="account-name" id="account-name" class="gui-input" value="OwnerAccountName">
-                    <label for="account-name" class="field-icon">
-                      <i class="fa fa-home"></i>
-                    </label>
+            </div>
+            <br>
+            <div class="section row mb10">
+              <label for="account-name" class="field-label col-md-3 text-center">Account Name:</label>
+              <div class="col-md-9">
+                <label for="account-name" class="field prepend-icon">
+                  <input type="text" name="account-name" id="account-name" class="gui-input" value="{{ Auth::user()->EmpFirstName }}.{{ Auth::user()->EmpLastName }}">
+                  <label for="account-name" class="field-icon">
+                    <i class="fa fa-home"></i>
                   </label>
-                </div>
+                </label>
               </div>
-              <div class="section row mb10">
-                <label for="account-email" class="field-label col-md-3 text-center">Account Email:</label>
-                <div class="col-md-9">
-                  <label for="account-email" class="field prepend-icon">
-                    <input type="email" name="account-email" id="account-email" class="gui-input" value="owner@store.com">
-                    <label for="account-email" class="field-icon">
-                      <i class="fa fa-envelope-o"></i>
-                    </label>
+            </div>
+            <div class="section row mb10">
+              <label for="account-email" class="field-label col-md-3 text-center">Account Email:</label>
+              <div class="col-md-9">
+                <label for="account-email" class="field prepend-icon">
+                  <input type="email" name="account-email" id="account-email" class="gui-input" value="{{ Auth::user()->EmpEmail }}">
+                  <label for="account-email" class="field-icon">
+                    <i class="fa fa-envelope-o"></i>
                   </label>
-                </div>
+                </label>
               </div>
-              <div class="section row mb10">
-                <label for="account-phone" class="field-label col-md-3 text-center">Account Phone:</label>
-                <div class="col-md-9">
-                  <label for="account-phone" class="field prepend-icon">
-                    <input type="text" name="account-phone" id="account-phone" class="gui-input" value="888-888-8888" placeholder="">
-                    <label for="account-phone" class="field-icon">
-                      <i class="fa fa-phone"></i>
-                    </label>
+            </div>
+            <div class="section row mb10">
+              <label for="account-phone" class="field-label col-md-3 text-center">Account Phone:</label>
+              <div class="col-md-9">
+                <label for="account-phone" class="field prepend-icon">
+                  <input type="text" name="account-phone" id="account-phone" class="gui-input" value="{{ Auth::user()->EmpContactNumber }}" placeholder="">
+                  <label for="account-phone" class="field-icon">
+                    <i class="fa fa-phone"></i>
                   </label>
-                </div>
+                </label>
               </div>
-              <div class="section row mb10">
-                <label for="account-password" class="field-label col-md-3 text-center">Change Password:</label>
-                <div class="col-md-9">
-                    <div class="section row mb10">
-                        <label for="current-password" class="field-label col-md-3 text-left">Current Password:</label>
-                        <div class="col-md-6">
-                            <input type="password" name="current-password" id="current-password" class="gui-input">
-                        </div>
-                    </div>
-                    <div class="section row mb10">
-                        <label for="new-password" class="field-label col-md-3 text-left">New Password:</label>
-                        <div class="col-md-6">
-                            <input type="password" name="new-password" id="new-password" class="gui-input">
-                        </div>
-                    </div>
-                    <div class="section row mb10">
-                        <label for="confirm-password" class="field-label col-md-3 text-left">Confirm Password:</label>
-                        <div class="col-md-6">
-                            <input type="password" name="confirm-password" id="confirm-password" class="gui-input">
-                        </div>
-                    </div>
-                    <div class="section row mb10">
-                        <label class="field-label col-md-3 text-left"></label>
-                        <div class="col-md-6">
-                            <input type="checkbox" id="show-passwords-checkbox" onclick="togglePasswords()"> Show Passwords
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="section row mb10">
+              <label for="account-password" class="field-label col-md-3 text-center">Change Password:</label>
+              <div class="col-md-9">
+                  <div class="section row mb10">
+                      <label for="current-password" class="field-label col-md-3 text-left">Current Password:</label>
+                      <div class="col-md-6">
+                          <input type="password" name="current-password" id="current-password" class="gui-input">
+                      </div>
+                  </div>
+                  <div class="section row mb10">
+                      <label for="new-password" class="field-label col-md-3 text-left">New Password:</label>
+                      <div class="col-md-6">
+                          <input type="password" name="new-password" id="new-password" class="gui-input">
+                      </div>
+                  </div>
+                  <div class="section row mb10">
+                      <label for="confirm-password" class="field-label col-md-3 text-left">Confirm Password:</label>
+                      <div class="col-md-6">
+                          <input type="password" name="confirm-password" id="confirm-password" class="gui-input">
+                      </div>
+                  </div>
+                  <div class="section row mb10">
+                      <label class="field-label col-md-3 text-left"></label>
+                      <div class="col-md-6">
+                          <input type="checkbox" id="show-passwords-checkbox" onclick="togglePasswords()"> Show Passwords
+                      </div>
+                  </div>
+              </div>
             </div>
           </div>
         </div>

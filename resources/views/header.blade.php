@@ -61,10 +61,20 @@
   </li>          
 <!-- CHANGED THIS -->
   <li class="dropdown">
-    <a href="{{url('/ecommerce_dashboard')}}#" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
-      <img id="profile-picture-dropdown" src="" alt="avatar" class="mw30 br64 mr15"> <b class="surnamebold">Kho</b>.Kim
-      <span class="caret caret-tp hidden-xs"></span>
-    </a>
+    @auth
+      <a href="{{ url('/ecommerce_dashboard') }}" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
+        <img id="profile-picture-dropdown" src="{{ asset('employee_images/' . Auth::user()->EmpImage) }}" alt="avatar" class="mw30 br64 mr15">
+        <b class="surnamebold">{{ Auth::user()->EmpFirstName }}.{{ Auth::user()->EmpLastName }}</b>
+        <span class="caret caret-tp hidden-xs"></span>
+      </a>
+    @else
+      <a href="{{ url('/') }}" class="dropdown-toggle fw600 p15" data-toggle="dropdown"> 
+        <img id="profile-picture-dropdown" src="{{ asset('path-to-default-image.jpg') }}" alt="default-avatar" class="mw30 br64 mr15">
+        <b class="surnamebold">Guest</b>
+        <span class="caret caret-tp hidden-xs"></span>
+      </a>
+    @endauth
+
     <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
       <li class="dropdown-header clearfix">
         <div class="pull-left ml10">

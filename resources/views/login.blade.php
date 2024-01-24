@@ -22,38 +22,56 @@
             z-index: -1;
         }
         .ring1 {
-            margin-top: -42vh;
+            margin-top: -39vh;
             margin-left: -10vh;
             width: 100%; 
             height: 100%; 
             background-image: url('assets/img/logos/ring1.png');
             background-size: 35%;
-            animation: floatAnimation 5s ease-in-out infinite alternate;
+            animation: floatAnimationRing1 5s ease-in-out infinite alternate;
         }
         .ring2 {
-            top: 20%;
-            left: 35%;
+            top: 30%;
+            left: 33.5%;
             width: 100%; 
             height: 100%;  
             background-image: url('assets/img/logos/ring2.png');
             background-size: 35%;
-            animation: floatAnimation 5s ease-in-out infinite alternate;
+            animation: floatAnimationRing2 5s ease-in-out infinite alternate;
         }
         .ring3 {
-            bottom: -60%;
-            left: -10%;
+            bottom: -50%;
+            left: -5%;
             width: 100%; 
             height: 100%; 
             background-image: url('assets/img/logos/ring3.png');
             background-size: 35%;
-            animation: floatAnimation 5s ease-in-out infinite alternate;
+            animation: floatAnimationRing3 5s ease-in-out infinite alternate;
         }
-        @keyframes floatAnimation {
-            0% {
+        @keyframes floatAnimationRing1 {
+            50% {
                 transform: translateY(-10px);
             }
-            100% {
+            50% {
                 transform: translateY(20px);
+            }
+        }
+
+        @keyframes floatAnimationRing2 {
+            50% {
+                transform: translateY(20px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes floatAnimationRing3 {
+            50% {
+                transform: translateY(20px);
+            }
+            50% {
+                transform: translateY(-10px);
             }
         }
         .left-side {
@@ -162,10 +180,10 @@
             <p class="tl">Enter your email and password</p>
         </div>
         <div class="email">
-            <label for="email">Email</label> 
+            <label for="EmpEmail">Email</label> 
         </div>
         <div>
-            <input type="text" id="email" name="email" placeholder="Enter your email">
+            <input type="text" id="EmpEmail" name="EmpEmail" placeholder="Enter your email">
         </div>
         <div class="password">
             <label for="password">Password</label>

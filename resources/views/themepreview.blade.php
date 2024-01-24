@@ -116,14 +116,6 @@
                   <label for="fullwidth-option">Fullwidth Layout</label>
                 </div>
               </div>
-              <div class="form-group mb20">
-                <div class="radio-custom radio-disabled mb5">
-                  <input type="radio" id="boxed-option" name="layout-option" disabled>
-                  <label for="boxed-option">Boxed Layout
-                    <b class="text-muted">(Coming Soon)</b>
-                  </label>
-                </div>
-              </div>
             </form>
           </div>
         </div>
