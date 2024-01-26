@@ -22,11 +22,13 @@ return new class extends Migration
             $table->decimal('UnitPrice', 10, 2);
             $table->decimal('ProdDiscount', 10, 2)->nullable();
             $table->integer('Stock')->default(0);
-            $table->string('ProdImage');
+            $table->string('ProdImage')->nullable();
+            $table->string('status')->default('active');
             $table->timestamps();
-            $table->unsignedBigInteger('CreatedBy');
+            $table->softDeletes(); 
+            $table->unsignedBigInteger('CreatedBy')->nullable();
             $table->unsignedBigInteger('UpdatedBy')->nullable();
-
+    
             $table->foreign('CategoryID')->references('CategoryID')->on('category');
             $table->foreign('CreatedBy')->references('EmployeeID')->on('employee');
             $table->foreign('UpdatedBy')->references('EmployeeID')->on('employee');

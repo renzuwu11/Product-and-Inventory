@@ -2,18 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ViewProductsController;
+use App\Http\Controllers\DashboardController;
 
-Route::get('/ecommerce_products', [ViewProductsController::class, 'index'])->name('ecommerce.products');
-
-/*Login
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('/', [LoginController::class, 'login'])->name('login');
-    Route::post('/login', [LoginController::class, 'login']);
-    Route::get('/loading', function () {
-        return view('loadingpage', ['redirectPath' => '/ecommerce_dashboard']);
-    }); 
-});*/
+//Route::get('/ecommerce_products', [ViewProductsController::class, 'index'])->name('ecommerce.products');
+Route::match(['get', 'put'], '/ecommerce_updateproducts/{id}', [ViewProductsController::class, 'updateProduct'])->name('update.product');
+Route::delete('delete_product/{id}', [ProductController::class, 'deleteProduct'])->name('delete.product');
+Route::post('/ecommerce_addproducts', [ProductController::class, 'store'])->name('ecommerce.addproducts');
+Route::get('/ecommerce_dashboard', [DashboardController::class, 'show'])->name('dashboard.show');
 
 Route::group(['middleware' => 'guest'], function() {
     Route::get('/', function(){
@@ -26,25 +23,10 @@ Route::get('/loading', function () {
     return view('loadingpage', ['redirectPath' => '/ecommerce_dashboard']);
 }); 
 
-/*Route::post('/', function () {
-    $credentials = request()->only('email', 'password');
-
-    // Hardcoded check (for testing purposes only)
-    if ($credentials['email'] === 'test@example.com' && $credentials['password'] === 'pass_123') {
-        // If the credentials match, simulate authentication using session
-
-        // Redirect to the loading page with the dashboard as the redirect path
-        return redirect('/loading');
-    } else {
-        // Incorrect credentials - redirect back to login with error message
-        return redirect('/')->with('error', 'Invalid credentials');
-    }
-});*/
-
-//Dashboard
-Route::get('/ecommerce_dashboard', function () {
-    return view('ecommerce_dashboard');
-});
+// //Dashboard
+// Route::get('/ecommerce_dashboard', function () {
+//     return view('ecommerce_dashboard');
+// });
 
 // //Products
 // Route::get('/ecommerce_products', function () {
@@ -64,3 +46,6 @@ Route::get('/ecommerce_returneditem', function () {
     return view('ecommerce_returneditem');
 });
 
+//filter
+Route::get('/ecommerce_products', [ProductController::class, 'products']);
+Route::get('/filterproducts', [ProductController::class, 'filterproducts']);

@@ -4,14 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes; 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Product extends Model
 {
     use HasFactory;
+    use SoftDeletes; 
+
     protected $table = 'product';
-    
-    public $fillable = [
+    protected $primaryKey = 'ProductID'; 
+
+    protected $fillable = [
         'CategoryID',
         'ProdName',
         'ProdDescription',
@@ -26,7 +30,11 @@ class Product extends Model
         'UpdatedBy',
     ];
 
-   
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'CategoryID', 'CategoryID');
+    }
+
     public function employee(): HasMany
     {
         return $this->hasMany(Employee::class);
