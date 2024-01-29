@@ -149,7 +149,7 @@
           <a href="{{url('/ecommerce_dashboard')}}">Dashboard</a>
         </li>
         <li class="active">
-          <a href="{{url('ecommerce_products')}}">Products</a>
+          <a href="{{url('ecommerce_products')}}">View Products</a>
         </li>
         <li>
           <a href="{{url('ecommerce_returneditem')}}">Returned Products</a>
@@ -157,8 +157,10 @@
       </ul>
     </div>
     <div class="topbar-right hidden-xs hidden-sm">
-      <a href="ecommerce_addproducts" class="btn btn-default btn-sm light fw600 ml10">
+      <a href="{{url('ecommerce_addproducts')}}" class="btn btn-default btn-sm light fw600 ml10">
         <span class="fa fa-plus pr5"></span> Add Product</a>
+      <a href="ecommerce_request" class="btn btn-default btn-sm light fw600 ml10">
+        <span class="glyphicon glyphicon-envelope"></span> Request Product</a>
     </div>
   </header>
 <!-- End: Topbar -->
@@ -185,6 +187,18 @@
                       <option value="2">Necklace</option>
                       <option value="3">Bracelet</option>
                       <option value="4">Set</option>
+                    </select>
+                    <i class="arrow"></i>
+                  </label>
+                </div>
+                <!-- kim added this for delivery date filter -->
+                <div class="col-md-5">
+                  <h5><small>Sort by Delivery Date</small></h5>
+                  <label class="field select">
+                    <select id="filter-delivery" name="Delivery">
+                      <option value="0">Select Order by</option>
+                      <option value="asc">Ascending</option>
+                      <option value="desc">Descending</option>>
                     </select>
                     <i class="arrow"></i>
                   </label>
@@ -230,6 +244,8 @@
                             <th class="" style="width: 200px;">Material</th>
                             <th class="">Weight</th>
                             <th class="">Size</th>
+                            <!-- kim added this for delivery date column -->
+                            <th class="">Delivery Date</th>
                             <th class="">Stock</th>
                             <th class="text-center">Edit</th>
                             <th class="text-center">Delete</th>
@@ -250,6 +266,8 @@
                                 <td class="text-justify">{{ $product->ProdMaterial }}</td>
                                 <td class="">{{ $product->ProdWeight }}</td>
                                 <td class="">{{ $product->ProdSize }}</td>
+                                <!-- juli/renz delivery date dapat to -->
+                                <td class="">{{ $product->ProdSize }}</td> 
                                 <td class="">{{ $product->Stock }}</td>
                                 <td>
                                     <form id="edit-form-{{ $product->ProductID }}" method="POST" action="{{ url('/ecommerce_updateproducts/' . $product->ProductID) }}" style="display: none;">

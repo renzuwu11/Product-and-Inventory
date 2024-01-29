@@ -148,8 +148,8 @@
         <li>
           <a href="{{url('/ecommerce_dashboard')}}">Dashboard</a>
         </li>
-        <li class="active">
-          <a href="{{url('ecommerce_products')}}">Products</a>
+        <li>
+          <a href="{{url('ecommerce_products')}}">View Products</a>
         </li>
         <li>
           <a href="{{url('ecommerce_returneditem')}}">Returned Products</a>
@@ -157,8 +157,10 @@
       </ul>
     </div>
     <div class="topbar-right hidden-xs hidden-sm">
-      <a href="ecommerce_addproducts" class="btn btn-default btn-sm light fw600 ml10">
+      <a href="{{url('ecommerce_addproducts')}}" class="btn btn-default btn-sm light fw600 ml10">
         <span class="fa fa-plus pr5"></span> Add Product</a>
+      <a href="ecommerce_request" class="btn btn-default btn-sm light fw600 ml10">
+        <span class="glyphicon glyphicon-envelope"></span> Request Product</a>
     </div>
   </header>
 <!-- End: Header -->
