@@ -1,5 +1,5 @@
 <!-- Start: Header -->
-<header class="navbar navbar-fixed-top">
+<header class="navbar navbar-fixed-top bg-dark">
   <div class="navbar-branding">
     <a class="navbar-brand" href="{{url('/ecommerce_dashboard')}}">          
       <img class="upperlogo" src="assets/img/logos/comet_al one.png" alt="COMET.AL">

@@ -7,10 +7,6 @@
 
 <body class="ecommerce-page">
 
-<!-- Start: Theme Preview -->
-  @include('themepreview')
-<!-- End: Theme Preview -->
-
 <!-- Start: Main -->
 <div id="main">
 
@@ -51,7 +47,10 @@
             <a href="{{url('ecommerce_returneditem')}}">
               <span class="glyphicon glyphicon-remove"></span> Returned Products </a>
           </li>
-        </ul>
+          <li>
+            <a href="{{url('ecommerce_request')}}">
+              <span class="glyphicon glyphicon-envelope"></span> Request Products </a>
+          </li>
       </li>
     </ul>
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>  <br> <br>
@@ -81,7 +80,7 @@
           <a href="{{url('ecommerce_products')}}">Products</a>
         </li>
         <li>
-          <a href="{{url('ecommerce_returneditem')}}">Returned Items</a>
+          <a href="{{url('ecommerce_returneditem')}}">Returned Products</a>
         </li>
       </ul>
     </div>
@@ -243,6 +242,21 @@
     </div>
   </div>
 </div>
+<!-- begin: .tray-right -->
+<aside class="tray tray-right tray290 pn">
+
+<!-- store activity timeline -->
+<ol class="timeline-list pl5 mt5">
+  <li class="timeline-item">
+    <div class="timeline-icon bg-dark light">
+      <span class="fa fa-tags"></span>
+    </div>
+    <div class="timeline-desc">
+      <b>Michael</b> Added a new item to his store:
+      <a href="ecommerce_dashboard.html#">Ipod</a>
+    </div>
+    <div class="timeline-date">1:25am</div>
+  </li>
 <!-- End: Main -->
 
 <!-- BEGIN: PAGE SCRIPTS -->

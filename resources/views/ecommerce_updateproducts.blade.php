@@ -33,15 +33,11 @@
 
 <body class="ecom-products-page">
 
-<!-- Start: Theme Preview -->
-@include('themepreview')
-<!-- End: Theme Preview -->
-
 <!-- Start: Main -->
 <div id="main">
 
 <!-- Start: Header -->
-<header class="navbar navbar-fixed-top">
+<header class="navbar navbar-fixed-top bg-dark">
   <div class="navbar-branding">
     <a class="navbar-brand" href="{{url('/ecommerce_dashboard')}}">          
       <img class="upperlogo" src="assets/img/logos/comet_al one.png" alt="COMET.AL">
@@ -122,6 +118,10 @@
             <a href="{{url('ecommerce_returneditem')}}">
               <span class="glyphicon glyphicon-remove"></span> Returned Products </a>
           </li>
+          <li>
+            <a href="{{url('ecommerce_request')}}">
+              <span class="glyphicon glyphicon-envelope"></span> Request Products </a>
+          </li>
         </ul>
       </li>
     </ul>
@@ -152,7 +152,7 @@
           <a href="{{url('ecommerce_products')}}">Products</a>
         </li>
         <li>
-          <a href="{{url('ecommerce_returneditem')}}">Returned Items</a>
+          <a href="{{url('ecommerce_returneditem')}}">Returned Products</a>
         </li>
       </ul>
     </div>
@@ -442,4 +442,3 @@ if (!isValid) {
 </body>
 
 </html>
-
