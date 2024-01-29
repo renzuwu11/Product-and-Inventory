@@ -6,7 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ViewProductsController;
 use App\Http\Controllers\DashboardController;
 
-//Route::get('/ecommerce_products', [ViewProductsController::class, 'index'])->name('ecommerce.products');
+Route::get('/ecommerce_products', [ViewProductsController::class, 'index'])->name('ecommerce.products');
 Route::match(['get', 'put'], '/ecommerce_updateproducts/{id}', [ViewProductsController::class, 'updateProduct'])->name('update.product');
 Route::delete('delete_product/{id}', [ProductController::class, 'deleteProduct'])->name('delete.product');
 Route::post('/ecommerce_addproducts', [ProductController::class, 'store'])->name('ecommerce.addproducts');
@@ -44,6 +44,10 @@ Route::get('/ecommerce_settings', function () {
 
 Route::get('/ecommerce_returneditem', function () {
     return view('ecommerce_returneditem');
+});
+
+Route::get('/ecommerce_request', function () {
+    return view('ecommerce_request');
 });
 
 //filter
