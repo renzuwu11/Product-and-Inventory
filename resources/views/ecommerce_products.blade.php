@@ -191,9 +191,9 @@
                     <i class="arrow"></i>
                   </label>
                 </div>
-                <!-- kim added this for delivery date filter -->
+                <!-- kim added this for number of stocks filter -->
                 <div class="col-md-5">
-                  <h5><small>Sort by Delivery Date</small></h5>
+                  <h5><small>Sort by Stocks</small></h5>
                   <label class="field select">
                     <select id="filter-delivery" name="Delivery">
                       <option value="0">Select Order by</option>
