@@ -43,10 +43,10 @@
             <a href="{{url('ecommerce_addproducts')}}">
               <span class="glyphicon glyphicon-plus"></span> Add Products </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="{{url('ecommerce_returneditem')}}">
               <span class="glyphicon glyphicon-remove"></span> Returned Products </a>
-          </li>
+          </li> -->
           <li>
             <a href="{{url('ecommerce_request')}}">
               <span class="glyphicon glyphicon-envelope"></span> Request Products </a>
@@ -79,9 +79,9 @@
         <li>
           <a href="{{url('ecommerce_products')}}">View Products</a>
         </li>
-        <li>
+        <!-- <li>
           <a href="{{url('ecommerce_returneditem')}}">Returned Products</a>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class="topbar-right hidden-xs hidden-sm">
@@ -100,7 +100,7 @@
 
   <!-- dashboard tiles -->
   <div class="row">
-    <div class="col-sm-4 col-xl-3">
+    <div class="col-xl-4">
         <div class="panel panel-tile text-center br-a br-grey">
             <div class="panel-body">
                 <h1 class="fs30 mt5 mbn">{{ $totalItems }}</h1>
@@ -109,7 +109,7 @@
             <div class="panel-footer br-t p12"></div>
         </div>
     </div>
-    <div class="col-sm-4 col-xl-3">
+    <!-- <div class="col-sm-4 col-xl-3">
         <div class="panel panel-tile text-center br-a br-grey">
             <div class="panel-body">
                 <h1 class="fs30 mt5 mbn">4</h1>
@@ -117,8 +117,8 @@
             </div>
             <div class="panel-footer br-t p12"></div>
         </div>
-    </div>
-    <div class="col-sm-4 col-xl-3">
+    </div> -->
+    <div class="col-xl-4">
         <div class="panel panel-tile text-center br-a br-grey">
             <div class="panel-body">
                 <h1 class="fs30 mt5 mbn">{{ $lowStockProducts }}</h1>
@@ -127,7 +127,7 @@
             <div class="panel-footer br-t p12"></div>
         </div>
     </div>
-    <div class="col-sm-3 col-xl-3 visible-xl">
+    <div class="col-xl-4">
         <div class="panel panel-tile text-center br-a br-grey">
             <div class="panel-body">
                 <h1 class="fs30 mt5 mbn">{{ $zeroStockProducts }}</h1>

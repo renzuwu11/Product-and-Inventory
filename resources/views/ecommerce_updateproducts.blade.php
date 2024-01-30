@@ -114,10 +114,10 @@
             <a href="{{url('ecommerce_addproducts')}}">
               <span class="glyphicon glyphicon-plus"></span> Add Products </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="{{url('ecommerce_returneditem')}}">
               <span class="glyphicon glyphicon-remove"></span> Returned Products </a>
-          </li>
+          </li> -->
           <li>
             <a href="{{url('ecommerce_request')}}">
               <span class="glyphicon glyphicon-envelope"></span> Request Products </a>
@@ -151,9 +151,9 @@
         <li>
           <a href="{{url('ecommerce_products')}}">View Products</a>
         </li>
-        <li>
+        <!-- <li>
           <a href="{{url('ecommerce_returneditem')}}">Returned Products</a>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div class="topbar-right hidden-xs hidden-sm">
